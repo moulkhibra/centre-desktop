@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+build/
+
+# Rollback snapshots
+.rollback/
+
+# Runtime data and local state
+license.json
+device-binding.json
+*.log
+*.tmp
+
+# Secrets and signing material
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# OS junk
+.DS_Store
+Thumbs.db

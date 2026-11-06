@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تسيير المركز</title>
+<style>
+@font-face{font-family:Cairo;src:url("fonts/Cairo-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Cairo;src:url("fonts/Cairo-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:Cairo;src:url("fonts/Cairo-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+:root{--bg:#f4f1ea;--sf:#fffdf9;--tx:#2b3a35;--mu:#7a8680;--ac:#2f7d6d;--ac2:#e4f0ec;--bd:#e6e1d6;--rd:#c0563f;--am:#b8791f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141c1a;--sf:#1c2623;--tx:#e8eeea;--mu:#9aaaa3;--ac:#3a9d87;--ac2:#24352f;--bd:#2e3d37;--rd:#ef8a7a;--am:#e6b25c}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Cairo,Tahoma,sans-serif;line-height:1.6}
+header{background:linear-gradient(135deg,var(--ac),#5fb3a0);color:#fff;padding:22px 18px 26px;border-radius:0 0 26px 26px;box-shadow:0 6px 18px rgba(0,0,0,.1)}
+header h1{margin:0;font-size:25px}
+nav{display:flex;gap:6px;overflow-x:auto;background:var(--bg);padding:12px 12px 4px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+nav button{background:var(--sf);border:1px solid var(--bd);border-radius:999px;padding:8px 18px;font:inherit;color:var(--mu);cursor:pointer;white-space:nowrap;transition:.2s}
+nav button.on{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:700;box-shadow:0 3px 10px rgba(47,125,109,.3)}
+main{max-width:900px;margin:0 auto;padding:16px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:18px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(60,50,30,.05)}
+h2{font-size:18px;margin:0 0 12px;color:var(--ac)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+label{display:block;font-size:13px;color:var(--mu)}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--tx);font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px}
+button.b{background:var(--ac);color:#fff;border:0;border-radius:12px;padding:11px 22px;font:inherit;font-weight:600;cursor:pointer;margin-top:12px;box-shadow:0 3px 10px rgba(47,125,109,.25)}
+button.s{background:var(--ac2);color:var(--ac);border:0;border-radius:10px;padding:6px 12px;font:inherit;cursor:pointer}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:right;padding:11px 8px;border-bottom:1px solid var(--bd);white-space:nowrap}
+th{color:var(--mu);font-size:13px;font-weight:600}
+tr:hover td{background:var(--ac2)}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.st div{background:var(--ac2);border-radius:14px;padding:14px}
+.st b{display:block;font-size:26px}
+.ok{color:var(--ac)}.no{color:var(--rd)}.wa{color:var(--am)}
+.em{color:var(--mu);padding:10px 0}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.fx .card{animation:up .45s ease both}
+.fx .card:nth-child(2){animation-delay:.06s}.fx .card:nth-child(3){animation-delay:.12s}.fx .card:nth-child(4){animation-delay:.18s}.fx .card:nth-child(n+5){animation-delay:.24s}
+.card{transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(60,50,30,.1)}
+button{transition:transform .15s,filter .15s}button:hover{filter:brightness(1.07)}button:active{transform:scale(.95)}
+.bell{display:inline-block;animation:pop 1.4s ease-in-out infinite}
+.st div{transition:transform .2s}.st div:hover{transform:scale(1.04)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{header,nav,.np{display:none!important}.card{border:0}main:has(#rcp)>.card:not(#rcp){display:none!important}}
+</style>
+</head>
+<body>
+<header id="hd"></header>
+<nav id="nav"></nav>
+<main id="app"></main>
+<script src="data-validation.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
